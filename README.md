@@ -48,13 +48,12 @@ The Meal Selection Application is a React-based web application that allows user
 1. Start the backend server:
    ```bash
    cd backend
-   node index.js
+   npm start
    ```
    The backend server will run on `http://localhost:3001`.
 
 2. Start the frontend development server:
    ```bash
-   cd ../frontend
    npm start
    ```
    The frontend application will run on `http://localhost:3000`.
