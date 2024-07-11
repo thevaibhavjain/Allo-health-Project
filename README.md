@@ -60,11 +60,9 @@ The Meal Selection Application is a React-based web application that allows user
    The frontend application will run on `http://localhost:3000`.
 
 
-## Running Tests
-To run tests, you can add a testing framework like Jest for unit tests and integration tests.
 
-## Deployment
-For deployment, you can use services like Vercel for the frontend and Heroku for the backend.
+
+
 
 ## Contributing
 Feel free to submit issues and pull requests to improve this project.
