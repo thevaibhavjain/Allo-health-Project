@@ -27,8 +27,8 @@ The Meal Selection Application is a React-based web application that allows user
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/meal-selection-app.git
-   cd meal-selection-app
+   git clone https://github.com/thevaibhavjain/Allo-health-Project
+   cd Allo-health-Project
    ```
 
 2. Install frontend dependencies:
