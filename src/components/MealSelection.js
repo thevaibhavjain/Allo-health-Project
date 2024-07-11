@@ -3,9 +3,7 @@ import './MealSelection.css';
 
 function MealSelection() {
   const [selectedMeal, setSelectedMeal] = useState(null);
-  const [drinks, setDrinks] = useState([]);
-  const [drink, setDrink] = useState("");
-  const [drinkidx, setDrinkidx] = useState(0);
+  const [selectedDrink, setSelectedDrink] = useState(null);
   const [meals, setMeals] = useState(null);
   const [labels, setLabels] = useState(null);
   const [total, setTotal] = useState(0);
@@ -13,6 +11,7 @@ function MealSelection() {
     { id: 1, meal: "" },
     { id: 2, meal: "" },
   ]);
+
   const onPassengerSelect = (ev) => {
     const tag = ev.target.parentElement;
     const siblings = Array.from(tag.parentElement.children);
@@ -22,9 +21,9 @@ function MealSelection() {
     });
 
     tag.classList.add("active");
-  }
+  };
 
-  const onDrinkSelect = (ev) => {
+  const onDrinkSelect = (ev, drink) => {
     const tag = ev.target.parentElement;
     const siblings = Array.from(tag.parentElement.children);
 
@@ -32,8 +31,19 @@ function MealSelection() {
       el.classList.remove("active");
     });
     tag.classList.add("active");
-    setDrink(tag.getAttribute("id"));
-    setDrinkidx(siblings.indexOf(tag));
+
+    if (selectedDrink && selectedDrink.id === drink.id) {
+      // Deselect the drink
+      setSelectedDrink(null);
+      setTotal(total - drink.price);
+    } else {
+      // Select a new drink
+      if (selectedDrink) {
+        setTotal(total - selectedDrink.price);
+      }
+      setSelectedDrink(drink);
+      setTotal(total + drink.price);
+    }
   };
 
   useEffect(() => {
@@ -53,16 +63,22 @@ function MealSelection() {
 
   const handleMealSelect = (meal) => {
     if (selectedMeal && selectedMeal.id === meal.id) {
-      // Deselect the meal
       setSelectedMeal(null);
-      setTotal(total - meal.price - meal.drinks[drinkidx].price);
+      setTotal(total - meal.price);
+      if (selectedDrink) {
+        setTotal(total - selectedDrink.price);
+        setSelectedDrink(null);
+      }
     } else {
-      // Select the meal
       if (selectedMeal) {
-        setTotal(total - selectedMeal.price - selectedMeal.drinks[drinkidx].price);
+        setTotal(total - selectedMeal.price);
+        if (selectedDrink) {
+          setTotal(total - selectedDrink.price);
+          setSelectedDrink(null);
+        }
       }
       setSelectedMeal(meal);
-      setTotal(total + meal.price + meal.drinks[drinkidx].price);
+      setTotal(total + meal.price);
     }
   };
 
@@ -74,6 +90,7 @@ function MealSelection() {
           <button key={label.id} className="category-button" id={label.id}>{label.label}</button>
         ))}
       <div className="meals-list">
+      </div>
         {meals.meals.map((meal) => (
           <div key={meal.id} className="meal-item">
             <div className="meal-image">
@@ -84,20 +101,20 @@ function MealSelection() {
               <ul>
                 <li>Starter: {meal.starter}</li>
                 {meal.desert && <li>Dessert: {meal.desert}</li>}
-                <li>Selected drink: {meal.drinks[drinkidx].title}</li>
+                <li>Selected drink: {selectedDrink ? selectedDrink.title : 'None'}</li>
               </ul>
               <div className="drink-select">
                 <div className='drink-options'>
                   <ul>
                     {meal.drinks && meal.drinks.map((drink) => (
-                      <li key={drink.id} onClick={onDrinkSelect} id={drink.id}>
+                      <li key={drink.id} onClick={(ev) => onDrinkSelect(ev, drink)} id={drink.id}>
                         <img height={100} src={drink.img} alt={drink.title} />
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="button-price">
-                  <div className="price">{meal.price}Rs</div>
+                  <div className="price">{meal.price} &euro; </div>
                   <button 
                     onClick={() => handleMealSelect(meal)} 
                     className={selectedMeal && selectedMeal.id === meal.id ? 'selected' : ''}
@@ -110,12 +127,11 @@ function MealSelection() {
           </div>
         ))}
       </div>
-      </div>
       <div className="meal-selection">
-        <h2>Select meal</h2>
+        <h2 className="head-title" > ✈️ Select meal</h2>
         <div className="flight-info">
-          <h3>Riga - St Petersburg</h3>
-          <p>Flight duration: 1h 40min</p>
+          <h3 className="total-price">Riga - St Petersburg</h3>
+          <p >Flight duration: 1h 40min</p>
         </div>
         {passengers.map((passenger) => (
           <div key={passenger.id} className="passenger-selection" onClick={onPassengerSelect}>
@@ -123,7 +139,7 @@ function MealSelection() {
           </div>
         ))}
         <div className="total-price">
-          <h3>Total: {total.toFixed(2)} &euro;</h3>
+          <h3>Total for All Passengers: {total.toFixed(2)} &euro;</h3>
         </div>
       </div>
     </div>

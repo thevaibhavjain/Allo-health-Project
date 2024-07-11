@@ -76,11 +76,14 @@
   .meal-selection h2 {
     margin-top: 0;
   }
-  
+  .head-title{
+    color: #337ab7;
+    margin-bottom: 5px;
+  }
   
 
   .flight-info{
-    border: 1px solid #337ab7;
+    border: 3px solid #337ab7;
     width: 260px;
     display: flex;
     align-items: center;
@@ -89,6 +92,7 @@
   }
   .flight-info h3 {
     margin-top: 0;
+    /* align-items:; */
   }
   
   .passenger-selection.active {
@@ -160,7 +164,7 @@
     border-radius: 2px;
   }
   .drink-options ul li.active{
-    outline: 2px solid purple;
+    outline: 2px solid #337ab7;
   }
   .button-price{
     display: flex;
