@@ -1,0 +1,277 @@
+/* .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.meal-options {
+  width: 60%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.meal-options h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.flight-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.passenger-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.passenger {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.meal-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.meal-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.meal-option img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.meal-details {
+  padding-left: 20px;
+}
+
+.meal-details h3 {
+  margin-bottom: 5px;
+}
+
+.meal-details p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.meal-details .price {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.meal-details button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.meal-details button.selected {
+  background-color: #8bc34a;
+}
+
+.total {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.total p {
+  margin-bottom: 5px;
+}
+
+.total .total-price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination button {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+.categories {
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.categories button {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.categories button:hover {
+  background-color: #ddd;
+}
+
+
+  */
+
+
+  /* 2nd */
+
+  /* Global styles */
+
+    /* Global styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Header styles */
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.header.plus-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.header h2 {
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Flight details styles */
+
+.flight-details {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.flight-details h3 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.flight-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.flight-details.edit-icon {
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Passengers styles */
+
+.passengers {
+  padding: 1rem;
+}
+
+.passenger {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.passenger p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.passenger.selected-meal {
+  font-size: 14px;
+  color: #666;
+  margin-left: 10px;
+}
+
+.passenger.select-meal-button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.passenger.select-meal-button:hover {
+  background-color: #3e8e41;
+}
+
+/* Total cost styles */
+
+.total-cost {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.total-cost p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.total-cost span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}

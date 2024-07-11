@@ -1,0 +1,226 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  /* .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  } */
+
+  .container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .categories {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #efeef1;
+  }
+  .category-button {
+    background-color: #f2f2f2; /* Light gray background */
+    border: 1px solid #1247c2   ; /* Subtle border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 8px 16px; /* Padding for text */
+    font-size: 14px; /* Text size */
+    color: #1247c2; /* Dark gray text */
+    cursor: pointer; /* Indicate clickable */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    margin: 5px; /* Spacing between buttons */
+    text-align: center; /* Center text */
+  }
+  
+  .category-button:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+  }
+  
+  .category-button.active {
+    background-color: #ddd; /* Darker gray for selected button */
+    border-color: #999; /* Darker border */
+  }
+  
+  .category-button.all {
+    width: 60px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 20px;
+  }
+  /* Meal selection styles */
+  
+  .meal-selection {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .meal-selection h2 {
+    margin-top: 0;
+  }
+  
+  
+
+  .flight-info{
+    border: 1px solid #337ab7;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .flight-info h3 {
+    margin-top: 0;
+  }
+  
+  .passenger-selection.active {
+    /* margin-bottom: 20px; */
+    background-color: #2b428782;
+    color: white;
+  }
+  
+  .passenger-selection h4 {
+    margin-top: 0;
+    /* padding: 5px; */
+    width: 260px;
+    height: 50px;
+    border: 1px solid #337ab7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .passenger-selection select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .total-price {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #337ab7;
+  }
+  
+  /* Meals list styles */
+  
+  .meals-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .meal-item {
+    /* width: calc(33.33% - 20px); */
+    display:flex;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .meal-item:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  .drink-select{
+    display:flex;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+  .drink-options ul{
+    display:flex;
+  }
+  .drink-options ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+  .drink-options ul li.active{
+    outline: 2px solid purple;
+  }
+  .button-price{
+    display: flex;
+ flex-direction: column;
+ margin-top: 35px;
+ /* align-items: center; */
+ /* justify-content: space-between; */
+  }
+  
+  .meal-image {
+    width: 100%;
+    /* height: 150px; */
+    overflow: hidden;
+    min-width: 400px;
+  }
+  .meal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 400px;
+    max-height: 400px;
+
+  }
+  
+  .meal-details {
+    padding: 20px;
+    min-width: 450px;
+  }
+  
+  .meal-details h3 {
+    margin-top: 0;
+  }
+  
+  .meal-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .meal-details li {
+    margin-bottom: 10px;
+  }
+  
+  .meal-details .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #337ab7;
+  }
+  
+  .meal-details button {
+    color: #337ab7;
+    border: 2px solid #337ab7;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    border-radius: 4px;
+  }
+  
+  .meal-details button:hover {
+    background-color: #23527c;
+    color: white;
+  }
